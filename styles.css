@@ -1,0 +1,334 @@
+:root {
+  --primary-color: #1a9047;
+  --secondary-color: #2bc866;
+  --tertiary-color: #004aad;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth; /* Adiciona rolagem suave */
+
+}
+
+/* definindo altura maxima do body */
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+ 
+/* --------------- HEADER ---------------*/
+
+/* alinhando a flex do header em formado de linha, para alinhar os elementos e links*/
+
+/* DEIXAR FIXO AO ROLAR PARA BAIXO */
+
+#header {
+    
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(207, 205, 205);
+  
+}
+
+/* alinhando separadamente o titulo do site */
+.header_titulo {
+  margin-left: 3rem;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  color: var(--tertiary-color);
+}
+
+/* alinhando separadamente os links */
+#links_header {
+  display: flex;
+  gap: 2rem;
+  color: var(--tertiary-color);
+}
+
+/* tirando a marcação do link */
+#links_header a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: 500ms;
+}
+
+/* mudando a cor dos links quando passa com o mouse em cima */
+#links_header a:hover {
+  color: var(--secondary-color);
+}
+
+/* alinhando separadamente os botões e espaçando eles */
+#buttons_header {
+  display: flex;
+  gap: 2rem;
+}
+
+/* estilizando o botão, a distancia do texto das bordas, cor de fundo, 
+estilos de borda, transição, cursor ativo */
+#buttons_header button {
+  padding: 0.6rem 2rem 0.6rem 2rem;
+  font-size: 1.4rem;
+  background-color: var(--primary-color);
+  border-radius: 19px;
+  border: 1px solid var(--secondary-color);
+  color: #fff;
+  transition: 500ms ease;
+  cursor: pointer;
+}
+
+/* mudando a cor do botão e fundo do botão ao passar por cima dele com o cursor */
+#buttons_header button:hover {
+  background-color: #fff;
+  color: var(--secondary-color);
+}
+
+/* --------------- NAV ---------------*/
+
+#nav {
+    height: 1000px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#nav h1 {
+  color: var(--secondary-color);
+  font-size: 4rem;
+}
+
+.search {
+  height: 3rem;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.search input {
+  width: 60%;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.search button {
+  border: none;
+  border-radius: 6px;
+  width: 20%;
+  background-color: #7c7a83;
+  font-size: 1rem;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-weight: bold;
+  transition: 500ms ease;
+  cursor: pointer;
+}
+
+.search button:hover {
+  transform: scale(1.07); /* Aumenta o botão em 20% */
+}
+
+.search button img {
+  width: 30px;
+  color: #fff;
+}
+
+#nav section img {
+  width: 100%;
+  height: 400px;
+  margin-top: 11rem;
+}
+
+/* --------------- MAIN ---------------*/
+
+#main {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* --------------- PRIMEIRA SEÇÃO ---------------*/
+
+#main .um h1 {
+  color: var(--secondary-color);
+  font-size: 3.5rem;
+}
+
+#main .um .cards-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  margin-top: 2rem;
+}
+
+#main .um .cards-container .cards {
+  width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.3rem;
+}
+
+#main .um .cards-container .cards img {
+  width: 250px;
+}
+
+#main .um .cards-container .cards h3 {
+  color: var(--secondary-color);
+}
+
+#main .um article h1 {
+  font-size: 2.3rem;
+  margin-top: 4rem;
+}
+
+#main .um article button {
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 1rem;
+  font-weight: bold;
+  transition: 500ms;
+}
+
+#main .um article button:hover {
+  transform: scale(1.07); /* Aumenta o botão em 20% */
+}
+
+/* --------------- SEGUNDA SEÇÃO ---------------*/
+
+#main .dois {
+  margin-top: 10rem;
+  background-color: var(--secondary-color);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 0 8rem 0;
+  gap: 4rem;
+}
+
+#main .dois div {
+  width: 34%;
+  text-align: start;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  line-height: 1.5rem;
+}
+
+#main .dois div h1 {
+  font-size: 2.8rem;
+  line-height: 3.5rem;
+}
+
+#main .dois div.empresas_log {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 2rem 10px 2rem;
+}
+
+#main .dois .empresas_log img {
+  width: 4rem;
+}
+
+/* --------------- TERCEIRA SEÇÃO ---------------*/
+
+#main .tres {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#main .tres .img_text {
+  display: flex;
+  flex-direction: row;
+  text-align: start;
+  width: 100%;
+  justify-content: center;
+  justify-content: center;
+  padding: 9rem 0 5rem 0;
+  gap: 4rem;
+}
+
+#main .tres .img_text img {
+    width: 520px;
+  }
+#main .tres .img_text h1 {
+  color: var(--secondary-color);
+  font-size: 2.7rem;
+  margin-bottom: 0;
+}
+
+#main .tres .carrosel {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#main .tres .carrosel div {
+  width: 265px;
+  text-align: start;
+  border: 1px solid var(--secondary-color);
+  height: 400px;
+  padding: 1rem;
+  line-height: 20px;
+  border-radius: 5px;
+}
+
+#main .tres .carrosel div h1 {
+  color: var(--secondary-color);
+}
+
+#main .tres .carrosel div img {
+  margin-top: 2rem;
+  width: 40px;
+}
+
+ 
+
+/* --------------- FOOTER ---------------*/
+footer {
+    margin-top: 7rem;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000;
+}
