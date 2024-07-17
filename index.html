@@ -3,10 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
     <title>Document</title>
   </head>
   <body>
+    <!-- usando uma função javascript simples, eu capturo o elemento header e digo que quando ele for clicado, sua class muda para "active", isso ira mudar os estilos dele  -->
+    <script>
+      function toggleMenu() {
+        var header = document.getElementById("sidebar");
+        header.classList.toggle("active");
+      }
+    </script>
+
     <!-- Criando a barra de navegação -->
     <header id="header">
       <!-- nome da pagina e icone de entrega-->
@@ -26,7 +34,21 @@
         <button>Entrar</button>
         <button>Cadastrar</button>
       </div>
+
+      <div id="menu_icon" onclick="toggleMenu()">&#9776;</div>
     </header>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <div id="sidebar_content">
+        <a href="#nav">Home</a>
+        <a href="#main_section_um">Sobre Nós</a>
+        <a href="#main_section_dois">Parceiros</a>
+        <a href="#main_section_tres">Ajuda</a>
+        <button>Entrar</button>
+        <button>Cadastrar</button>
+      </div>
+    </div>
 
     <!-- barra de navegação, onde o cliente ira colocar o codigo do pedido -->
     <nav id="nav">
@@ -49,14 +71,13 @@
       <section id="main_section_um" class="section um">
         <!-- titulo e subtitulo -->
         <h1>Veja como o Rastreio Express pode facilitar sua rotina</h1>
-        <p style="font-size: 1.2rem;">
+        <p style="font-size: 1.2rem">
           As funcionaliidades do Rastreio Express foram desenvolvidas para
           ajudar você a organizar a rotina logística.
         </p>
 
         <!-- cards de apresentação  -->
         <div class="cards-container">
-
           <!-- PRIMEIRO CARD - fala sobre buscar sua encomenda -->
           <div class="cards">
             <img src="./images/search.png" alt="" />
@@ -68,7 +89,7 @@
           </div>
 
           <!-- SEGUNDO CARD - fala sobre acompanhar sua compra -->
-          <div class="cards">
+          <div class="cards" id="dois">
             <img src="./images/phone_loc.png" alt="" />
             <h3>Acompanhe suas encomendas</h3>
             <p>
@@ -92,17 +113,15 @@
         <!-- Oferecimento do cadastro -->
         <article>
           <h1>
-            O Rastreio Express foi desenvolvido especialmente para quem <br>deseja
-            usar uma ferramenta simples e objetiva, sem enrolação.
+            O Rastreio Express foi desenvolvido especialmente para quem
+            <br />deseja usar uma ferramenta simples e objetiva, sem enrolação.
           </h1>
           <button>CADASTRE-SE AGORA</button>
-        </article> 
-
+        </article>
       </section>
 
       <!-- A Segunda seção fala sobre as empresas que o Rastreio Xpress é parceira, e é dividida em duas partes: -->
       <section id="main_section_dois" class="section dois">
-        
         <!-- PRIMEIRA PARTE - informar como funciona o rastreamento e apresentar as empresas pareceiras, e porque usar o Melhor Rastreio-->
         <div>
           <h1>A plataforma de rastreamento mais completa do mercado</h1>
@@ -118,7 +137,10 @@
           <div class="empresas_log">
             <img src="./images/JT-Express-Logo.png" alt="" />
             <img src="./images/azul.png" alt="" />
-            <img src="./images/buslog-logo-3AD515D99B-seeklogo.com.png" alt="" />
+            <img
+              src="./images/buslog-logo-3AD515D99B-seeklogo.com.png"
+              alt=""
+            />
             <img src="./images/correios.jpeg" alt="" />
           </div>
         </div>
@@ -130,20 +152,22 @@
 
       <!-- Terceira Seção, aqui explicamos e esclarecemos algumas duvidas sobre o rastreio, diividindo a seção em tres partes: -->
       <section id="main_section_tres" class="section tres">
-
         <!-- elemento que armazena a imagem de duvidas e o texto -->
         <div class="img_text">
           <img src="./images/need_help.png" alt="" />
           <div>
-            <h1>Precisa de ajuda <br> com algum rastreio?</h1>
+            <h1>
+              Precisa de ajuda <br />
+              com algum rastreio?
+            </h1>
             <p>Veja o que fazer em cada um dos casos:</p>
           </div>
         </div>
 
         <!-- elemento que armazena os cards explicacionais sobre as duvidas-->
         <div class="carrosel">
-          <img src="./images/icons8-seta-esquerda-50.png" alt="">
-           <div>
+          <img src="./images/icons8-seta-esquerda-50.png" alt="" />
+          <div>
             <img src="./images/icons8-ampulheta-30.png" alt="" />
             <h1>Estou esperando uma encomenda</h1>
             <p>
@@ -185,12 +209,9 @@
               mensalidade ou taxa pelos serviços
             </p>
           </div>
-          <img src="./images/icons8-seta-direita-50.png" alt="">
-
+          <img src="./images/icons8-seta-direita-50.png" alt="" />
         </div>
-
       </section>
-      
     </main>
 
     <!-- footer simples -->

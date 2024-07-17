@@ -15,9 +15,17 @@ body {
 /* definindo altura maxima do body */
 body {
   min-height: 100vh;
-  font-family: Arial, sans-serif;
 }
- 
+
+body h1{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 /* --------------- HEADER ---------------*/
 
 /* alinhando a flex do header em formado de linha, para alinhar os elementos e links*/
@@ -92,42 +100,133 @@ estilos de borda, transição, cursor ativo */
   color: var(--secondary-color);
 }
 
+/* deixando icone invisivel até a tela diminuir */
+#menu_icon{
+  display: none;
+}
+
+
+/* Sidebar e seus estilos*/
+#sidebar {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  border-right: 1px solid rgb(207, 205, 205);
+  transition: left 0.3s ease;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+  padding-top: 3rem;
+}
+
+
+/* estilos dos botoes do sidebar */
+#sidebar button{
+  width: 10rem;
+  height: 3rem;
+  font-size: 1.4rem;
+  background-color: var(--primary-color);
+  border-radius: 19px;
+  border: 1px solid var(--secondary-color);
+  color: #fff;
+  transition: 500ms ease;
+  cursor: pointer;
+ 
+}
+
+
+/* estilos em comum dos links e dos botões  */
+#sidebar a, #sidebar button {
+  display: block;
+  margin: 1rem 0;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+
+/* animação nos elementos */
+#sidebar a:hover, #sidebar button:hover {
+  background-color: #fff;
+  color: var(--secondary-color);
+}
+
+/* Responsividade, quanto a tela for menor que 1160px o sidebar e o botão do sidebar vão deixar de ser invisiveis e vão funcionar
+  o "display" funciona basicamente com o estado do elemento, se for "none" então o elemento deixa de existir na pagina,
+  se for uma flex, voce cria uma linha para estilização
+*/
+@media (max-width: 1160px) {
+  #links_header, #buttons_header {
+      display: none;
+  }
+
+  #header {
+      flex-direction: row;
+  }
+
+  .header_titulo {
+      margin-left: 1rem;
+  }
+
+  #menu_icon {
+      display: block;
+      margin-right: 1rem;
+  }
+}
+
+#sidebar.active {
+  left: 0;
+}
+
+
+
+
 /* --------------- NAV ---------------*/
 
 #nav {
-    height: 1000px;
+  height: 1000px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 0 1rem;
 }
 
 #nav h1 {
   color: var(--secondary-color);
   font-size: 4rem;
+  text-align: center;
+
 }
 
 .search {
   height: 3rem;
-  width: 40%;
+  width: 100%;
+  max-width: 600px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .search input {
-  width: 60%;
+  width: 100%;
+  padding: 0 0 0 15px;
   border: 1px solid rgb(211, 211, 211);
   border-radius: 6px;
-  padding: 20px;
+  font-size: 1rem;
 }
 
 .search button {
   border: none;
   border-radius: 6px;
-  width: 20%;
+  padding: 0 2rem 0 2rem;
   background-color: #7c7a83;
   font-size: 1rem;
   color: #fff;
@@ -152,9 +251,61 @@ estilos de borda, transição, cursor ativo */
 
 #nav section img {
   width: 100%;
-  height: 400px;
-  margin-top: 11rem;
+  height: auto;
+  max-height: 400px;
+  margin-top: 2rem;
 }
+
+
+/* Responsividade do NAV */
+
+
+/* quando a tela for menor que 768px eu ajusto o tamanho dos elementos e aordem do input e do button  */
+@media (max-width: 768px) {
+  #nav h1 {
+    font-size: 3rem;
+  }
+
+  .search {
+    flex-direction: column;
+    width: 90%;
+    gap: 0.5rem;
+  }
+
+  .search input {
+    width: 96%;
+    padding: 10px 0 10px 15px;
+    text-align: center;
+  }
+
+  .search button {
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+
+/* quando a tela for menor que 768px eu ajusto o tamanho dos elementos */
+@media (max-width: 480px) {
+  #nav h1 {
+    font-size: 2.5rem;
+  }
+
+  .search input {
+    font-size: 0.9rem;
+  }
+
+  .search button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .search button img {
+    width: 25px;
+  }
+}
+
+
+
 
 /* --------------- MAIN ---------------*/
 
@@ -219,6 +370,81 @@ estilos de borda, transição, cursor ativo */
 #main .um article button:hover {
   transform: scale(1.07); /* Aumenta o botão em 20% */
 }
+
+
+
+
+@media (max-width: 1290px) {
+  #main .um h1 {
+    font-size: 3rem;
+  }
+
+  #main .um p {
+    font-size: 1rem;
+  }
+
+  #main .um .cards-container {
+    gap: 1rem;
+  }
+
+  #main .um .cards-container #dois {
+    border-top: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
+
+  }
+
+  #main .um article h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 998px) {
+  #main .um h1 {
+    font-size: 2.5rem;
+  }
+
+  #main .um p {
+    font-size: 1rem;
+  }
+
+  #main .um .cards-container {
+    flex-direction: column;
+  }
+
+  #main .um article h1 {
+    font-size: 1.8rem;
+  }
+
+  #main .um article button {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #main .um h1 {
+    font-size: 2rem;
+  }
+
+  #main .um p {
+    font-size: 0.9rem;
+  }
+
+  #main .um .cards-container .cards {
+    max-width: 100%;
+  }
+
+  #main .um article h1 {
+    font-size: 1.5rem;
+  }
+
+  #main .um article button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+
 
 /* --------------- SEGUNDA SEÇÃO ---------------*/
 
