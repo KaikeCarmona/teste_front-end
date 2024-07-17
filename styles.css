@@ -1,9 +1,17 @@
+/* OBSERVAÇÃO: Não comentei literalmente cada parte do codigo css pois iiria
+ficar algo muito repetitivo, então explico oque a funcionalidade faz
+e oque cada parte do codigo faz na primeira vez que uso */
+
+
+/* Declarando as cores padrão do site */
 :root {
   --primary-color: #1a9047;
   --secondary-color: #2bc866;
   --tertiary-color: #004aad;
 }
 
+
+/* Retirando os espaços padrão de uma pagina web */
 html,
 body {
   padding: 0;
@@ -17,11 +25,13 @@ body {
   min-height: 100vh;
 }
 
+/* Fontes Globais para os Titulos h1 */
 body h1{
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
 
+/* Fontes globais para os textos */
 body{
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -375,6 +385,7 @@ estilos de borda, transição, cursor ativo */
 
 
 
+/* Media Queries */
 
 @media (max-width: 1290px) {
   #main .um h1 {
@@ -491,9 +502,6 @@ estilos de borda, transição, cursor ativo */
   width: 4rem;
   margin: 0;
 }
-
-
-
 
 
 /* Media Queries */
@@ -619,8 +627,6 @@ estilos de borda, transição, cursor ativo */
 }
 
 
-
-
 /* Media Queries */
 @media (max-width: 1024px) {
   #main .tres .img_text {
@@ -678,7 +684,6 @@ estilos de borda, transição, cursor ativo */
     display: none;
   }
 }
- 
 
 /* --------------- FOOTER ---------------*/
 footer {
